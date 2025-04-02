@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('./fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JosefinSans', sans-serif;
+}
+
+:root[data-theme="light"] {
+    --background-color-body: #f0f0f0;
+    --body-color: #000;
+    --header-whitesmoke-bg: whitesmoke;
+    --header-color-white: white;
+    --border-tile: 1px solid rgb(221, 221, 221);
+    --bg-tile: rgb(244, 244, 244);
+    --bg-tile-hover: rgb(221, 221, 221);
+
+    --button-bg-color: #000000;
+    --button-text-color: #FFFFFF;
+    --button-hover-bg-color: #333333;
+    --button-hover-text-color: #FFFFFF;
+
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --box-shadow-hover: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+:root[data-theme="dark"] {
+    --background-color-body: #121212;
+    --body-color: #e0e0e0;
+    --header-whitesmoke-bg: #1e1e1e;
+    --header-color-white: #e0e0e0;
+    --border-tile: 1px solid #333;
+    --bg-tile: #1e1e1e;
+    --bg-tile-hover: #333;
+
+    --button-bg-color: #FFFFFF;
+    --button-text-color: #000000;
+    --button-hover-bg-color: #E0E0E0;
+    --button-hover-text-color: #000000;
+
+    --box-shadow-hover: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /*--box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+}
+
+body {
+    background-color: var(--background-color-body);
+    color: var(--body-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-whitesmoke-bg);
+    color: var(--header-color-white);
+    padding: 1rem;
+    font-size: 2em;
+    margin: 0 2rem 2rem 2rem;
+}
+
+header .logoWrapper a img {
+    width: 10rem;
+}
+
+.page #homeTiles .tile {
+    border: var(--border-tile);
+    padding: 1rem;
+    background: var(--bg-tile);
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: var(--box-shadow);
+}
+
+.page #homeTiles .tile:hover {
+    background: var(--bg-tile-hover);
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.page #homeTiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+#themeToggle {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#themeToggle:hover {
+    background-color: var(--button-hover-bg-color);
+    color: var(--button-hover-text-color);
+}

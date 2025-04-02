@@ -10,7 +10,7 @@ class DataFetcher {
 
     public function fetchAllFromTracker() {
         try {
-            $query = "SELECT * FROM data";
+            $query = "SELECT * FROM data LIMIT 1";  //vrati mi jenom prvni zaznam (TO CHECK: predpokladam ze DB se bude jen UPDATOVAT a ne insertovat?)
             $stmt = $this->db->prepare($query);   //připravíme si dotaz (statement) a následně jej executneme - ochrana proti SQL inj.
             $stmt->execute(); 
             return $stmt->fetchAll();
