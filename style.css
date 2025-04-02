@@ -62,6 +62,7 @@ header {
     padding: 1rem;
     font-size: 2em;
     margin: 0 2rem 2rem 2rem;
+    border-radius: 6px;
 }
 
 header .logoWrapper a img {
@@ -104,4 +105,13 @@ header .logoWrapper a img {
 #themeToggle:hover {
     background-color: var(--button-hover-bg-color);
     color: var(--button-hover-text-color);
+}
+
+
+
+
+/*config dlaždic - vyuzivam classy ktery jsem si pridal behem iterace syntaxe "tile-<name z DB>"*/
+
+.tile-id{
+    display: none;   /*jen pro debug v devtools*/
 }
