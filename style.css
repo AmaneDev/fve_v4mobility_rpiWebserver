@@ -28,6 +28,10 @@
 
     --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     --box-shadow-hover: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    --scrollbar-track: #f0f0f0;
+    --scrollbar-thumb: #000;
+    --scrollbar-thumb-hover: #333;
 }
 
 :root[data-theme="dark"] {
@@ -45,12 +49,44 @@
     --button-hover-text-color: #000000;
 
     --box-shadow-hover: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    /*--box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+
+    --scrollbar-track: #1e1e1e;
+    --scrollbar-thumb: #e0e0e0;
+    --scrollbar-thumb-hover: #ccc;
 }
 
 body {
     background-color: var(--background-color-body);
     color: var(--body-color);
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+.err500{
+    width: 200px;
+    
+}
+
+.errDiv{
+    align-items: center;
+    flex-direction: column-reverse;
+    display: flex;
+    color: red;
 }
 
 header {
@@ -62,7 +98,7 @@ header {
     padding: 1rem;
     font-size: 2em;
     margin: 0 2rem 2rem 2rem;
-    border-radius: 6px;
+    border-radius: 0px 0px 6px 6px;
 }
 
 header .logoWrapper a img {
@@ -72,13 +108,13 @@ header .logoWrapper a img {
 .page #homeTiles .tile {
     border: var(--border-tile);
     padding: 1rem;
-    background: var(--bg-tile);
+    background-color: var(--bg-tile);
     transition: transform 0.3s ease, background 0.3s ease;
     box-shadow: var(--box-shadow);
 }
 
 .page #homeTiles .tile:hover {
-    background: var(--bg-tile-hover);
+    background-color: var(--bg-tile-hover);
     cursor: pointer;
     transform: translateY(-5px);
     box-shadow: var(--box-shadow-hover);
@@ -86,7 +122,8 @@ header .logoWrapper a img {
 
 .page #homeTiles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, 400px);
     gap: 1rem;
     margin: 2rem;
     padding: 1rem;
@@ -112,6 +149,21 @@ header .logoWrapper a img {
 
 /*config dlaždic - vyuzivam classy ktery jsem si pridal behem iterace syntaxe "tile-<name z DB>"*/
 
+.tile{
+    background-repeat: no-repeat;
+    background-size: 120px 120px;
+    background-position: top 1.5rem right 1.5rem;
+    /*padding: 2rem 1rem 1rem 1rem;*/
+}
 .tile-id{
     display: none;   /*jen pro debug v devtools*/
+}
+.tile-datum{
+    background-image: url('/img/tileIcons/date.svg');
+}
+.tile-cas{
+    background-image: url('/img/tileIcons/time.svg');
+}
+.tile-intenzita5{
+    background-image: url('/img/tileIcons/intenzita5.svg');
 }

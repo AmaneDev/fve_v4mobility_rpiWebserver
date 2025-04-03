@@ -26,7 +26,10 @@
             <?php endforeach; ?>
         <?php endforeach; ?>
     <?php else: ?>
-        <div style="color: red;"><?php echo htmlspecialchars($errorMessage ?? 'No data available.'); ?></div>
+        <div class="errDiv">
+            <?php echo htmlspecialchars($errorMessage ?? 'No data available.'); ?>
+            <img class="err500" src="../../img/500.svg">
+        </div>
     <?php endif; ?>
 </div>
 <script>
