@@ -22,9 +22,25 @@
         echo '</header>';
 
         echo '<div class="page">';
-        if($page == "home") include_once $_SERVER['DOCUMENT_ROOT']. '/pages/home.php';
+        switch ($page) {
+            case 'home':
+                include_once $_SERVER['DOCUMENT_ROOT'].'/pages/home.php';
+                break;
+            case 'allView':
+                include_once $_SERVER['DOCUMENT_ROOT']. '/pages/allView.php';
+                break;
+            case 'statsLink':
+                include_once $_SERVER['DOCUMENT_ROOT']. '/pages/statsLink.php';
+                break;
+            default:
+                include_once $_SERVER['DOCUMENT_ROOT'].'/pages/500.php';
+                break;
+        }
         echo '</div>';
 
+        /*dolni navigace (mobil)*/
+        require_once $_SERVER['DOCUMENT_ROOT'].'/webBase/menuMobile.php';
+        
 
         echo '<footer>';
         require_once $_SERVER['DOCUMENT_ROOT']. '/webBase/footer.php'; //footer

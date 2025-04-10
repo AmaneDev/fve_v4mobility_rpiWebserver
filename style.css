@@ -105,9 +105,13 @@ header .logoWrapper a img {
     width: 10rem;
 }
 
+h1{
+    font-size: 2.5rem;
+}
+
 .page #homeTiles .tile {
     border: var(--border-tile);
-    padding: 1rem;
+    padding: 15rem 0 2rem 2em;
     background-color: var(--bg-tile);
     transition: transform 0.3s ease, background 0.3s ease;
     box-shadow: var(--box-shadow);
@@ -155,6 +159,12 @@ header .logoWrapper a img {
     background-position: top 1.5rem right 1.5rem;
     /*padding: 2rem 1rem 1rem 1rem;*/
 }
+.tile p{
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 1.5rem 0 0 0;
+    color: rgb(27, 187, 189);
+}
 .tile-id{
     display: none;   /*jen pro debug v devtools*/
 }
@@ -164,6 +174,91 @@ header .logoWrapper a img {
 .tile-cas{
     background-image: url('/img/tileIcons/time.svg');
 }
-.tile-intenzita5{
-    background-image: url('/img/tileIcons/intenzita5.svg');
+.tile-intenzitaS{
+    background-image: url('/img/tileIcons/sun.svg');
+}
+.tile-vstupVI{
+    background-image: url('/img/tileIcons/input.svg');
+}
+.tile-bocniVI{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-zatezVI{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-proudI{
+    background-image: url('/img/tileIcons/proud_battery.svg');
+}
+.tile-vstupV1{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-bocniV1{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-zatezV1{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-proud1{
+    background-image: url('/img/tileIcons/proud_battery.svg');
+}
+.tile-vstupV2{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-bocniV2{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-zatezV2{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-proud2{
+    background-image: url('/img/tileIcons/proud_battery.svg');
+}
+.tile-vstupV3{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-bocniV3{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-zatezV3{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-proud3{
+    background-image: url('/img/tileIcons/proud_battery.svg');
+}
+
+/*menicko v headeru*/
+.menuDesktop{
+    display: flex;
+    gap: 1rem;
+}
+.menuDesktop img{
+    height: 2rem;
+    cursor: pointer;
+}
+
+/*menicko mobilni*/
+
+#menuMobile{
+    display: none;
+    justify-content: space-around;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: 2;
+    background-color: var(--header-whitesmoke-bg);
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+
+}
+#menuMobile a img{
+    height: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    #menuMobile {
+        display: flex;
+    }
+    .menuDesktop{
+        display: none;
+    }
 }
