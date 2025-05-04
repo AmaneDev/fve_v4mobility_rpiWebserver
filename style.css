@@ -60,6 +60,10 @@ body {
     color: var(--body-color);
 }
 
+.themeSwitcher{
+    display:none;
+}
+
 /*scrollbar*/
 ::-webkit-scrollbar {
     width: 10px;
@@ -148,6 +152,14 @@ h1{
     color: var(--button-hover-text-color);
 }
 
+.schoolLogos{
+    display: flex;
+    gap: 0.3rem;
+}
+.schoolLogo{
+    width: 3rem;
+}
+
 
 
 
@@ -225,6 +237,83 @@ h1{
 .tile-proud3{
     background-image: url('/img/tileIcons/proud_battery.svg');
 }
+
+
+
+/*stats*/
+
+.canvasjs-chart-credit{
+    display: none;
+}
+.dataSelectorContainer{
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin: 2rem;
+    background-image: url("/img/settings-icon-blackblue.svg"); 
+    background-size: 3rem 3rem;
+    background-repeat: no-repeat;
+    background-position: top 1rem right 1rem;
+}
+.graphContainer{
+    background: white;
+    padding: 1rem;
+    width: 50%;
+    height: 400px;
+    border-radius: 8px;
+    width: 100%;
+}
+.grafSpojnicovy1{
+    width: 100%;
+    height: 310px;
+}
+.grafSpojnicovy1Data{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 1rem 1rem 1rem 0;
+}
+.grafSpojnicovy1Data img{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 10px;
+}
+.grafSpojnicovy1Data img:hover{
+    cursor: pointer;
+}
+.dataTable td {
+    padding-right: 3rem; /* space between columns */
+}
+.dataTable th {
+    text-align: left;
+    margin: 0 0 2rem 0;
+}
+  
+#graphData{
+    display: none;
+    margin: auto;
+    overflow-x: scroll;
+}
+#checkboxContainer {
+    margin: 20px 0;
+}
+#checkboxContainer label {
+    margin-right: 15px;
+    display: inline-block;
+}
+.dataSelector{
+    width: 18px;
+    height: 18px;
+}
+th{
+    margin: 0 1rem 0 0;
+}
+td{
+    margin: 0 1rem 0 0;
+}
+
+
 
 /*menicko v headeru*/
 .menuDesktop{

@@ -14,3 +14,8 @@
     <script src="/scripts/themeSwitcher.js"></script> 
 </div>
 
+<div class="schoolLogos">
+    <img src="/img/zarnovica-logo.jfif" alt="soš žarnovica" class="schoolLogo">
+    <img src="/img/logo-skola.svg" alt="sše lipník" class="schoolLogo">
+</div>
+

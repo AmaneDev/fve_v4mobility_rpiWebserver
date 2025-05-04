@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">  
-    <?php $title = "Solární tracker - webserver"; ?> 
+    <?php $title = "Solar tracker"; ?> 
     <link rel="icon" href="/img/favicon.svg" type="image/x-icon">
     <title><?php echo $title ?></title>
 </head>

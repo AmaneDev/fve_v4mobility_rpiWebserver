@@ -7,7 +7,7 @@ ini_set('log_errors', 1);
 error_reporting(E_ALL);*/ //dbg
 
 
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') { //:D
     http_response_code(405); // pokud ne-GET requestnuto, vrati 405 (Method not Allowed)
     echo json_encode([
         'status' => 'error',
@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 try {
+    $limit = $_GET['limit'] ?? 10; //pokud není limit v GETu, nastavíme defaultně na 10
     $dataFetcher = new DataFetcher(); //vytvoří objekt $dataFetcher podle třídy DataFetcher   (nachází se v root/dbFetch.php)
-    $data = $dataFetcher->fetchAllFromTracker(); // fetchne data pomocí metody fetchAllFromTracker() z třídy DataFetcher 
+    $data = $dataFetcher->fetchAllFromTracker($limit); // fetchne data pomocí metody fetchAllFromTracker() z třídy DataFetcher 
     if (empty($data)) {
         throw new Exception('No data returned from the database'); //pokud nevrátí žádná data, chyba...
     }
-    //var_dump($data);   //dbg
 
     //JSON response
     echo json_encode([

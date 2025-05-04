@@ -1,7 +1,7 @@
 <?php
-    error_reporting(E_ERROR | E_PARSE); // zakazani warningů a notices
+    //error_reporting(E_ERROR | E_PARSE); // zakazani warningů a notices
 
-    $apiUrl = '../api/getHomeData.php';
+    $apiUrl = 'http://localhost/api/getHomeData.php?limit=1'; 
     //echo $apiUrl; //dbg
     $response = file_get_contents($apiUrl);  //fetchneme si data z API (api vrací JSON)
     $data = json_decode($response, true);
@@ -40,7 +40,7 @@
                 const keyMapping = {
                     datum: 'Datum údajů',
                     cas: 'Aktuální čas',
-                    intenzitaS: 'Intenzita slunce',
+                    intenzitaS: 'Slunce - LUX',
                     vstupVI: 'Vstup 1', //vstupní napětí pro intenzitu
                     vstupV2: 'Vstup 2',
                     vstupV3: 'Vstup 3',

@@ -1,5 +1,4 @@
 <?php
-
 class DataFetcher {
     private $db;
 
@@ -8,10 +7,12 @@ class DataFetcher {
         $this->db = $databaseConnection->getConnection();
     }
 
-    public function fetchAllFromTracker() {
+    public function fetchAllFromTracker($limitRecords) {
         try {
-            $query = "SELECT * FROM data LIMIT 1";  //vrati mi jenom prvni zaznam (TO CHECK: predpokladam ze DB se bude jen UPDATOVAT a ne insertovat?)
+            //var_dump($limitRecords);
+            $query = "SELECT * FROM data LIMIT ?";  //vrati mi jenom prvni zaznam (TO CHECK: predpokladam ze DB se bude jen UPDATOVAT a ne insertovat?)
             $stmt = $this->db->prepare($query);   //připravíme si dotaz (statement) a následně jej executneme - ochrana proti SQL inj.
+            $stmt->bindValue(1, (int)$limitRecords, PDO::PARAM_INT);
             $stmt->execute(); 
             return $stmt->fetchAll();
         } catch (PDOException $e) {
