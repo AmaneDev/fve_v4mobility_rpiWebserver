@@ -29,6 +29,8 @@
     --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     --box-shadow-hover: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+    --box-shadow-table: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
     --scrollbar-track: #f0f0f0;
     --scrollbar-thumb: #000;
     --scrollbar-thumb-hover: #333;
@@ -159,6 +161,51 @@ h1{
 .schoolLogo{
     width: 3rem;
 }
+
+/*HomePage*/
+section.home{
+    height: 100vh;
+    display: flex;
+
+}
+section.home.sunLeft{
+    /*width: 1%;*/
+}
+.statsRight{
+    width: 50%;
+    padding: 4rem;
+
+}
+.statsTable{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow-table);
+
+}
+.weatherAnimContainer{
+    filter: blur(15px);
+}
+.statsGridCols{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(193px, 1fr)) !important;
+    grid-template-rows: repeat(auto-fill, 150px) !important;
+    gap: 1rem;
+    margin: 2rem;
+    padding: 1rem;
+}
+.statsGridCols .tile{
+    background-size: 50px 50px;
+    padding: 4rem 0 2rem 1em !important;
+}
+.tile h1{
+    font-size: 1rem !important;
+}
+.tile p{
+    font-size: 1.5rem !important;
+}
+
 
 
 

@@ -1,17 +1,10 @@
 <?php
-    //error_reporting(E_ERROR | E_PARSE); // zakazani warningů a notices
+    require_once $_SERVER['DOCUMENT_ROOT'].'/webBase/TileData.php';
 
-    $apiUrl = 'http://localhost/api/getHomeData.php?limit=1'; 
-    //echo $apiUrl; //dbg
-    $response = file_get_contents($apiUrl);  //fetchneme si data z API (api vrací JSON)
-    $data = json_decode($response, true);
-
-    if ($data && $data['status'] === 'success') {  //jen kontrolujeme zda jsme dostali success při requestu, pokud ne, throwneme chybu
-        $items = $data['data'];   //datovou část (s SQL odpovědí) uložíme do proměnné $items, později ji budeme iterovat
-    } else {
-        $items = []; //přiřadíme prázdný array, aby php neřvalo warningy ohledně undefined var (od php 7 je to pain, i když jednodušší je to potlačit pomocí error_reporting metody (což i dělám) ale debugging je pak čistší bez warns takže tak ...)
-        $errorMessage = $data['message'] ?? 'Internal Server Error.';  //pokud jsme nedostali success (ale error), tak vyhodíme error message o chybe serveru (což fakticky je prava bo je to chyba API části :D)
-    }
+    $apiUrl = 'http://localhost/api/getHomeData.php?limit=1';
+    $fetcher = new TileData($apiUrl);
+    $items = $fetcher->getItems();
+    $errorMessage = $fetcher->getErrorMessage();
 ?>
 
 
