@@ -166,6 +166,7 @@ h1{
 section.home{
     height: 100vh;
     display: flex;
+    justify-content: center;
 
 }
 section.home.sunLeft{
@@ -199,11 +200,51 @@ section.home.sunLeft{
     background-size: 50px 50px;
     padding: 4rem 0 2rem 1em !important;
 }
-.tile h1{
+.statsGridCols .tile h1{
     font-size: 1rem !important;
 }
-.tile p{
+.statsGridCols .tile p{
     font-size: 1.5rem !important;
+}
+.statsHeader{
+    margin: 1rem 0 -2rem 3rem;
+}
+
+/*mapovani bgimg dlazdic pro hp*/
+
+.tile-zatez{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-proud{
+    background-image: url('/img/tileIcons/proud_battery.svg');
+}
+.tile-bocni{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+.tile-vstup{
+    background-image: url('/img/tileIcons/lightning.svg');
+}
+
+/*weatherAnim*/
+
+.sun, .cloud {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    display: none;
+    max-width: 100%;
+}
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.rotate {
+    animation: spin 20s linear infinite;
 }
 
 
