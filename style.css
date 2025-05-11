@@ -173,7 +173,7 @@ section.home.sunLeft{
     /*width: 1%;*/
 }
 .statsRight{
-    width: 50%;
+    min-width: 50%;
     padding: 4rem;
 
 }
@@ -186,7 +186,7 @@ section.home.sunLeft{
 
 }
 .weatherAnimContainer{
-    filter: blur(15px);
+    filter: blur(12px);
 }
 .statsGridCols{
     display: grid;
@@ -225,7 +225,7 @@ section.home.sunLeft{
     background-image: url('/img/tileIcons/lightning.svg');
 }
 
-/*weatherAnim*/
+
 
 .sun, .cloud {
     transition: opacity 0.5s ease-in-out;
@@ -245,6 +245,25 @@ section.home.sunLeft{
 
 .rotate {
     animation: spin 20s linear infinite;
+}
+
+@keyframes cloudMove {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10%);
+        opacity: 0.5;
+    }
+}
+
+.cloud {
+    animation: cloudMove 15s linear infinite;
 }
 
 
@@ -438,4 +457,33 @@ td{
     .menuDesktop{
         display: none;
     }
+    .statsRight{
+        min-width: 100%;
+        padding: 2rem;
+    }
+    .statsTable{
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+    .section.home{
+        flex-direction: column;
+    }
+    .weatherAnim{
+        margin: 15rem 0 -10rem 0;
+    }
+    section.home{
+        flex-direction: column;
+    }
 }
+@media screen and (max-width: 600px) {
+    .weatherAnim{
+        margin: 45rem 0 -7rem 0;
+    }
+} 
+@media screen and (max-width: 600px) {
+    .statsTable{
+        padding: 1rem 0rem 0.5rem 0rem;
+    }
+    .weatherAnim{
+        margin: 40rem 0 -7rem 0;
+    }
+}    
