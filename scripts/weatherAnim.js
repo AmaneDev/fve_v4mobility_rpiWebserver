@@ -31,7 +31,7 @@ function getWeatherAnim(item) {
         } else if (lux > 0 && lux <= 5000) {
             fadeOut(sunImg);
             fadeIn(cloudImg);
-        } else if (lux > 5000 && lux <= 32000) {
+        } else if (lux > 5000 && lux <= 100000) {
             fadeOut(cloudImg);
             fadeIn(sunImg);
             sunImg.classList.add('rotate');

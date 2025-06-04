@@ -6,7 +6,7 @@
 
     $limit = $conf_historyRecLimit ?? 100;
     $queryParams = http_build_query(['limit' => $limit]);
-    $apiUrl = 'http://localhost/api/getHomeData.php?' . $queryParams;
+    $apiUrl = 'http://'.$_SERVER['HTTP_HOST'].'/api/getHomeData.php?' . $queryParams;
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
@@ -48,10 +48,12 @@
             $items = $data['data'];
 
             foreach ($items as $item) {
-                $label = htmlspecialchars($item['datum'] ?? '', ENT_QUOTES, 'UTF-8');
+                $originalDate = $item['datum'] ?? '';
+                $formattedDate = !empty($originalDate) ? date('d.m.Y', strtotime($originalDate)) : '';
+                $label = htmlspecialchars($formattedDate, ENT_QUOTES, 'UTF-8');
 
                 foreach ($item as $key => $value) {
-                    if ($key === 'datum' || !isset($keyMapping[$key])){
+                    if ($key === 'datum' || !isset($keyMapping[$key])) {
                         continue;  
                     } 
 
@@ -72,7 +74,7 @@
 
 
 
-<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+<script src="/scripts/canvasjs/canvasjs-chart-3.12.12/canvasjs.min.js"></script>
 
 <div id="dataSelectorContainer" class="dataSelectorContainer">
     <h2>Vyberte data:</h2>

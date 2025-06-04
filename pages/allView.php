@@ -1,7 +1,7 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'].'/webBase/TileData.php';
 
-    $apiUrl = 'http://localhost/api/getHomeData.php?limit=1';
+    $apiUrl = 'http://'.$_SERVER['HTTP_HOST'].'/api/getHomeData.php?limit=1';
     $fetcher = new TileData($apiUrl);
     $items = $fetcher->getItems();
     $errorMessage = $fetcher->getErrorMessage();
