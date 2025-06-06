@@ -459,7 +459,7 @@ td{
     }
     .statsRight{
         min-width: 100%;
-        padding: 2rem;
+        padding: 10rem 2rem 2rem 2rem;
     }
     .statsTable{
         padding: 1.5rem 1rem 1rem 1rem;
@@ -471,7 +471,7 @@ td{
         /*margin: 15rem 0 -10rem 0;*/
         position: absolute;
         width: 40%;
-        top: 50%;
+        top: 430px;
         left: 50%;
         transform: translate(-50%, -100%);
     }
